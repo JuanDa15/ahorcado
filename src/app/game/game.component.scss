@@ -1,0 +1,108 @@
+$secundar-color: rgb(27,101,219);
+
+.img__container{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  img{
+    height: 450px;
+  }
+
+  .message{
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: .5rem;
+  }
+
+  .counter{
+    color: $secundar-color;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+
+.word__container{
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  margin: .8rem .2rem;
+}
+
+.letters__container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: .3rem .6rem;
+
+  .letter{
+    font-size: 1rem;
+    padding: .6rem 1.2rem;
+    background-color: $secundar-color;
+    margin: .3rem .6rem;
+    border-radius: .5rem;
+    border: 1px solid #666;
+    color: #fff;
+    filter: drop-shadow(0px 0px 2px#666);
+    font-weight: 400;
+
+    &:hover{
+      background-color: #fff;
+      color: $secundar-color;
+      transition: .5s ease;
+    }
+  }
+}
+
+.Alert_container{
+  border: 1px solid #666;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  border-radius: .5rem;
+
+  span{
+    letter-spacing: 1px;
+  }
+}
+
+
+.Buttons_Container{
+  margin-top: 1.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+
+  button{
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    border: 1px solid #666;
+    filter: drop-shadow(0px 1px 2px #666);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: #fff;
+    background-color: $secundar-color;
+    transition: background-color .5s ease;
+
+    &:hover{
+      background-color: #fff;
+      color: $secundar-color;
+    }
+  }
+}
+
+
+.win{
+  background-color: rgb(52, 185, 52);
+}
+
+.lose{
+  background-color: rgb(187, 48, 48);
+}
+
+.hide{
+  display: none;
+}

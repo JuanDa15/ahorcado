@@ -1,0 +1,21 @@
+<div class="img__container">
+  <img src="../assets/img/ahorcado/{{usedAttempts}}.png" alt="">
+  <span class="message">Intentos: </span>
+  <span class="counter">{{usedAttempts}}/{{attempts}}</span>
+</div>
+<div class="word__container">
+  <h1> {{hiddenWord}}</h1>
+</div>
+<div class="letters__container">
+  <button class="letter" *ngFor="let letter of letters" (click)="checkLetter(letter)">{{letter}}</button>
+</div>
+<div class="Alert_container win" *ngIf="win">
+  <span>{{message}}</span>
+</div>
+<div class="Alert_container lose" *ngIf="lose">
+  <span>{{message}}</span>
+</div>
+<div class="Buttons_Container" *ngIf="win || lose">
+  <button type="submit" class="close" [routerLink]="['']" routerLinkActive="router-link-active" >Salir</button>
+  <button type="submit" class="restart" (click)="restartGame()"><i class="fas fa-undo"></i></button>
+</div>
