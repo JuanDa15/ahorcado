@@ -15,14 +15,13 @@ export class GameComponent implements OnInit {
   hiddenWord:string = '';
   attempts:number = 9;
   usedAttempts:number = 0;
-  win:boolean = false;
-  lose:boolean = false;
+  status: 'win' | 'lose' | 'playing' = 'playing'
   message:string = '';
 
   letters = ['A','B','C','D','E','F','G','H','I','J',
             'K','L','M','N','Ñ','O','P','Q','R','S',
             'T','U','V','W','X','Y','Z'];
-  
+
   constructor(){
     this.selectWord();
   }
@@ -57,25 +56,25 @@ export class GameComponent implements OnInit {
     const WordString = WordArray.join('');
     if(WordString == this.word){
       this.message = 'Ganaste';
-      this.win = true;
+      this.status = 'win';
       this.hideInterface();
     }
 
     if(this.usedAttempts >= this.attempts){
       this.usedAttempts = 9;
       this.message = 'Perdiste';
-      this.lose = true;
+      this.status = 'lose';
       this.hideInterface();
     }
   }
 
   hideInterface(){
-    if((this.win || this.lose) == true){
+    if(['win','lose'].includes(this.status)){
       const lettersBox = document.querySelector('.letters__container');
       if(lettersBox != null){lettersBox.classList.add('hide');}
     }
   }
-  
+
   replaceWord(letter:string){
     const ArrayWord = this.hiddenWord.split(' ');
 
@@ -90,8 +89,7 @@ export class GameComponent implements OnInit {
   }
 
   restartGame(){
-    this.win = false;
-    this.lose = false;
+    this.status = 'playing';
     this.usedAttempts = 0;
     document.querySelector('.letters__container')?.classList.remove('hide');
     this.selectWord();

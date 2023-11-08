@@ -1,0 +1,23 @@
+$secundar-color: rgb(27,101,219);
+
+.img__container{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  img{
+    height: 450px;
+  }
+
+  .message{
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: .5rem;
+  }
+
+  .counter{
+    color: $secundar-color;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}

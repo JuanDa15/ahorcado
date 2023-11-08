@@ -1,0 +1,19 @@
+$secundar-color: rgb(27,101,219);
+
+.letter{
+  font-size: 1rem;
+  padding: .6rem 1.2rem;
+  background-color: $secundar-color;
+  margin: .3rem .6rem;
+  border-radius: .5rem;
+  border: 1px solid #666;
+  color: #fff;
+  filter: drop-shadow(0px 0px 2px#666);
+  font-weight: 400;
+
+  &:hover{
+    background-color: #fff;
+    color: $secundar-color;
+    transition: .5s ease;
+  }
+}

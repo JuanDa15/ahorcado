@@ -1,0 +1,12 @@
+@if (status === 'win' || status === 'lose') {
+  <p
+    class="Alert_container"
+    data-testid="alert"
+    [ngClass]="{
+      'lose': 'lose',
+      'win': 'win'
+    }"
+  >
+    <span>{{messages[status]}}</span>
+  </p>
+}
