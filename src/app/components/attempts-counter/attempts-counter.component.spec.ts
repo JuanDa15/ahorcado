@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { type ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { AttemptsCounterComponent } from './attempts-counter.component';
+import { AttemptsCounterComponent } from './attempts-counter.component'
 
-describe('AttemptsCounterComponent', () => {
-  let component: AttemptsCounterComponent;
-  let fixture: ComponentFixture<AttemptsCounterComponent>;
+fdescribe('AttemptsCounterComponent', () => {
+  let component: AttemptsCounterComponent
+  let fixture: ComponentFixture<AttemptsCounterComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AttemptsCounterComponent]
+      declarations: [AttemptsCounterComponent]
     })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(AttemptsCounterComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+      .compileComponents()
+
+    fixture = TestBed.createComponent(AttemptsCounterComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

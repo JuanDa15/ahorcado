@@ -3,7 +3,7 @@ import { AlertComponent } from './alert.component'
 import { By } from '@angular/platform-browser'
 import { type DebugElement } from '@angular/core'
 
-fdescribe('AlertComponent', () => {
+describe('AlertComponent', () => {
   let component: AlertComponent
   let fixture: ComponentFixture<AlertComponent>
 
