@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core'
+import { type GameState } from 'src/app/services/settings.service'
 
 @Component({
   selector: 'alert',
@@ -11,5 +12,5 @@ export class AlertComponent {
     lose: 'Perdiste'
   }
 
-  @Input({ required: true }) status: 'win' | 'lose' | 'playing' = 'playing'
+  @Input({ required: true }) status: GameState = 'playing'
 }

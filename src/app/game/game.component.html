@@ -1,14 +1,17 @@
 <attempts-counter
-  [attempts]="attempts"
-  [usedAttempts]="usedAttempts"
+  [attempts]="settings.MAX_ATTEMPS"
+  [usedAttempts]="settings.usedAttempts()"
 />
 
 <hidden-word
-  [hiddenWord]="hiddenWord"
+  [hiddenWord]="settings.hiddenWord()"
 />
 
-<div class="letters__container">
-  @for (letter of letters; track 'letter'+$index) {
+<div
+  class="letters__container"
+  [class.hide]="['win', 'lose'].includes(this.settings.gameStatus())"
+>
+  @for (letter of settings.LETTERS; track 'letter'+$index) {
     <letter
       [letter]="letter"
       (onClickLetter)="checkLetter( letter )"
@@ -16,9 +19,9 @@
   }
 </div>
 
-<alert [status]="status"/>
+<alert [status]="settings.gameStatus()"/>
 
-@if (status !== 'playing') {
+@if (settings.gameStatus() !== 'playing') {
   <div class="Buttons_Container">
     <button
       type="button"
@@ -30,7 +33,7 @@
     <button
       type="button"
       class="restart"
-      (click)="restartGame()"
+      (click)="settings.initializeGame()"
     >
       <svg
         fill="none" viewBox="0 0 24 24"

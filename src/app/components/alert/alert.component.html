@@ -3,8 +3,8 @@
     class="Alert_container"
     data-testid="alert"
     [ngClass]="{
-      'lose': 'lose',
-      'win': 'win'
+      'lose': status === 'lose',
+      'win': status === 'win'
     }"
   >
     <span>{{messages[status]}}</span>
