@@ -1,8 +1,17 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 
 @Component({
   selector: 'letter',
-  templateUrl: './letter.component.html',
+  template: `
+    <button
+      type="button"
+      class="letter"
+      data-testid="letter"
+      (click)="onClickLetter.emit()"
+    >
+      {{letter}}
+    </button>
+  `,
   styleUrl: './letter.component.scss'
 })
 export class LetterComponent {

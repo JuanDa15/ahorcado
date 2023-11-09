@@ -3,7 +3,7 @@ import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { AttemptsCounterComponent } from './attempts-counter.component'
 import { By } from '@angular/platform-browser'
 
-fdescribe('AttemptsCounterComponent', () => {
+describe('AttemptsCounterComponent', () => {
   let component: AttemptsCounterComponent
   let fixture: ComponentFixture<AttemptsCounterComponent>
 
